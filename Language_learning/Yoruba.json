@@ -1,14 +1,99 @@
 [
-  {
-    "quiz": {
-      "What is the correct translation for \"telephone\"?": [
-        "Agborun",
-        "Keke",
-        "Omi",
-        "Ero Ibanisoro"
-      ]
-    },
-    "GrammarExercise": {},
-    "SpeechRecognition": {}
-  }
+    {
+    "quiz": "What is the correct translation for \"Telephone\"?",
+    "answers": {
+           "a": "Agborun", 
+           "b": "Keke", 
+           "c": "Omi", 
+           "d": "Ero Ibanisoro"},
+    "correctAnswer": "Ero Ibanisoro"},
+    
+    {
+      "quiz": "How do you say \"Good morning\"?",
+       "answers":{
+           "a": "E ku irole", 
+           "b": "E kaa san", 
+           "c": "E kaa ro", 
+           "d": "Odabo"},
+       "correctAnswer": "E kaa ro"},
+    {
+     "quiz": "How do you say \"Good afternoon\"?",
+      "answers": {
+           "a": "Odabo", 
+           "b": "E kaa san", 
+           "c":"E ku irole", 
+           "d":"E kaa ro"},
+      "correctAnswer": "E kaa san"},
+    {
+     "quiz": "What is the correct translation for \"Please\"?",
+      "answers": {
+           "a": "Osi", 
+           "b": "Bawo ni", 
+           "c": "Jowo", 
+           "d": "Pele"},
+    "correctAnswer": "Jowo"},
+   {
+    "quiz": "How do you say \"Thank You\"?",
+     "answers": {
+           "a": "Otun", 
+           "b": "Odabo", 
+           "c": "E se", 
+           "d": "Pele"},
+     "correctAnswer": "E se"},
+    {
+    "quiz": "How do you say \"Sorry\"?",
+     "answers": {
+         "a": "Pele", 
+         "b": "E mi ko mo", 
+         "c": "E se", 
+         "d": "Jowo"},
+     "correctAnswer": "Pele"},
+    {
+    "quiz": "How do you say \"Hello\"?",
+     "answers": {
+         "a": "Jowo", 
+         "b": "Bawo  ni", 
+         "c": "Ese", 
+         "d": "Odabo"},
+     "correctAnswer": "Bawo  ni"},
+    {
+    "quiz": "How do you say \"Goodbye\"?",
+       "answers": {
+           "a": "Odabo", 
+           "b": "Pele", 
+           "c": "Bawo ni", 
+           "d": "E mi ko mo"},
+       "correctAnswer": "Odabo"},
+    {
+    "quiz": "How do you say \"Water\"?",
+       "answers": {
+           "a": "Agborun", 
+           "b": "Keke", 
+           "c": "Ero Ibanisoro", 
+           "d": "Omi"},
+       "correctAnswer": "Omi"},
+    {
+    "quiz": "What is the correct translation for \"Father\"?",
+     "answers": {
+         "a": "Iya", 
+         "b": "Omo", 
+         "c": "Baba", 
+         "d": "Okunrin"},
+     "correctAnswer": "Baba"},
+    {
+    "quiz": "What is the correct translation for \"Mother\"?",
+     "answers": {
+         "a": "Omo", 
+         "b": "Baba", 
+         "c": "Iya", 
+         "d": "Alejo"},
+    "correctAnswer": "Iya"},
+    {
+    "quiz": "What is the correct translation for \"Child\"?",
+     "answers": {
+         "a": "Eyan", 
+         "b": "Omo", 
+         "c": "Obinrin", 
+         "d": "Baba"},
+    "correctAnswer": "Omo"}
 ]
