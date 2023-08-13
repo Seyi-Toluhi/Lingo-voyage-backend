@@ -1,0 +1,26 @@
+{
+  "name": "language-learning",
+  "version": "1.0.0",
+  "description": "A website for learning new languages",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Seyi-Toluhi"
+  },
+  "author": "Oluwaseyi Toluhi",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react": "^7.33.0",
+    "parcel": "^2.9.3",
+    "prettier": "3.0.0"
+  }
+}

@@ -1,0 +1,114 @@
+body {
+  --bs-body-font-family: "Libre Franklin", sans-serif;
+  --bs-body-font-family: "Open Sans", sans-serif;
+  --bs-body-font-family: "Roboto", sans-serif;
+  --bs-body-font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  margin-top: 20%;
+  background-color: rgb(106, 206, 206);
+  color: whitesmoke;
+  padding: 20px 150px 20px 150px;
+}
+h1 {
+}
+
+#form_section {
+  font-size: 30px;
+  margin-top: 8%;
+  margin-bottom: 30px;
+}
+
+article {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.nav_button1 {
+  size: 100px;
+}
+
+.nav_button:focus {
+  color: violet;
+}
+#signUp {
+  border: ;
+  background-color: rgb(234, 162, 243);
+  color: black;
+  margin-top: 2%;
+}
+
+#Password:invalid:focus {
+  background-image: linear-gradient(pink, lightgreen);
+}
+.landing_page {
+  display: grid;
+  grid-template-columns: 200px 500px 200px;
+}
+.navigation {
+  margin-right: 2%;
+}
+.display_center {
+  margin-top: 5%;
+  margin-right: 2%;
+}
+
+#quizes {
+  margin-top: 10px;
+}
+.login {
+  margin-left: 20%;
+  margin-top: 10%;
+}
+
+.login_list,
+ul {
+  /* Reset styles for unordered lists */
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+
+.level {
+  margin-top: 15%;
+}
+#game_description {
+  margin-top: 2%;
+}
+
+.hide {
+  display: none;
+}
+
+.nav_button0 {
+  margin-bottom: 30%;
+}
+
+.nav_button0,
+.nav_button1 {
+  border: ;
+}
+#game_progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content_div {
+  height: 500px;
+  background-color: rgba(255, 0, 0, 0.1);
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.radio_buttons {
+  display: block;
+}
