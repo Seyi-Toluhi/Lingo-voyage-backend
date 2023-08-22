@@ -9,20 +9,61 @@ body {
   flex-direction: column;
   align-items: center;
 }
-header {
-  margin-top: 20%;
-  background-color: rgb(106, 206, 206);
-  color: whitesmoke;
-  padding: 20px 150px 20px 150px;
+header { 
+  color: rgb(121, 121, 177);
+  padding: 2px 5px 2px 5px;
+  margin-bottom: 15px;
 }
-h1 {
+h1 { text-align: center;
 }
 
-#form_section {
-  font-size: 30px;
-  margin-top: 8%;
-  margin-bottom: 30px;
+#dropdownMenuButton1{color: rgb(112, 177, 212);
+  background-color: transparent;
+  text-decoration: none;
+  border:none;
+  font-size:  var(--bs-body-font-size);
+  padding: 10px 10px 0 0;
 }
+
+#dropdownMenuButton1:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+  transition: 1s;
+}
+
+
+a:link {
+  color: rgb(112, 177, 212);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(112, 177, 212);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+  transition: 1s;
+}
+
+
+#signup_form {
+  font-size: 30px;
+  
+}
+
+.navigation{width:100px;
+  height: 900px;
+  border-right: solid;
+  border-color: rgba(192,192,192, 0.2);
+margin: 100px 10px 5px 0px;
+padding-right: 150px;}
 
 article {
   font-size: 20px;
@@ -30,14 +71,7 @@ article {
   margin-top: 50px;
 }
 
-.nav_button1 {
-  size: 100px;
-}
-
-.nav_button:focus {
-  color: violet;
-}
-#signUp {
+#signUp, #signIn {
   border: ;
   background-color: rgb(234, 162, 243);
   color: black;
@@ -49,22 +83,21 @@ article {
 }
 .landing_page {
   display: grid;
-  grid-template-columns: 200px 500px 200px;
+ grid-template-columns: 300px 600px 100px;
 }
-.navigation {
-  margin-right: 2%;
-}
+
 .display_center {
-  margin-top: 5%;
-  margin-right: 2%;
+  margin: 90px 0 5px 0;
 }
 
 #quizes {
   margin-top: 10px;
 }
 .login {
-  margin-left: 20%;
-  margin-top: 10%;
+  margin: 100px 0 5px 0px;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .login_list,
@@ -74,6 +107,7 @@ ul {
 }
 img {
   max-width: 100%;
+  margin-bottom: 5%;
 }
 
 .level {
@@ -84,31 +118,120 @@ img {
 }
 
 .hide {
-  display: none;
+  visibility: hidden;
+  /*display: none;*/
 }
 
-.nav_button0 {
-  margin-bottom: 30%;
+.hide_check{
+  visibility: hidden;
 }
 
-.nav_button0,
-.nav_button1 {
-  border: ;
-}
-#game_progress {
+#answer_check, #answer_div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.content_div {
-  height: 500px;
-  background-color: rgba(255, 0, 0, 0.1);
-  margin-top: 10%;
+#correct_answer{margin-top: 50px;
+}
+
+#quiz_content {
+  position: absolute;
+  height: 700px;
+  width: 55%;
+  top: 100px;
+  background-color: rgb(277, 188, 154, 0.2);
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 8%;
+ 
 }
+
+#activity_selection_div{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 200px;
+  background-color: rgb(234, 162, 243);
+}
+
 .radio_buttons {
   display: block;
+}
+
+#game_description,
+#signup_form,
+#login_form {position: absolute;
+   width: 500px;
+   height: 500px;
+  }
+
+li, #account_button, #game_progress {margin: 30px 0 5px}
+
+
+#exit_link{position: static;
+}
+
+#select_activity:visited{ transition: 0.9s;}
+
+@media (max-width: 1018px) and (min-width: 860px) {
+
+  .landing_page{ margin: 10px;
+    display: grid;
+    grid-template-columns: 200px 400px 100px;
+    }
+  header{font-size: calc(1.225rem + 0.1vw);}
+    #game_description, #signup_form,
+    #login_form{width: 300px;}
+    p{font-size:20px;}
+    #account_button{padding: 2px 2px ;}
+}
+
+
+@media (max-width: 859px) and (min-width: 620px) {
+  .landing_page{ width:600px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 170px 350px 80px;
+    }
+  header{--bs-font-size: calc(1rem + 2.1vw);}
+    #game_description, #signup_form,
+    #login_form{width: 300px;}
+    p{font-size: 15px;}
+    #account_button{padding: 2px 2px ;}
+}
+
+
+
+@media (max-width: 619px) and (min-width: 300px) {
+   .landing_page{ width: 350px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    }
+
+    header{font-size: 10px;}
+    #game_description, #signup_form,
+    #login_form {width: 150px;}
+    p{font-size:10px;}
+    .login{width: 80px;}
+    .navigation{padding: 0 20px 0 0;
+      width: 100px;
+      border-right: none;}
+    #account_button{padding: 2px 2px;}
+    #quiz_content{
+      top: 50px;
+      font-size: 20px;
+      height: 600px;
+      background-color: rgb(277, 188, 154, 0.2);
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 6%;
+     
+    }
+    #correct_answer{font-size: 20px;}
 }

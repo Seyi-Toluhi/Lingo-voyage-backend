@@ -19,10 +19,40 @@
     />
   </head>
   <body>
-    <div class="content_div w-75 p-3">
-      <div>
-        <button type="submit" id="" class="btn d-grid gap-2">Exit</button>
-      </div>
+    <div>
+      <a href="language-learning.html" id="exit_link">Exit</a>
+    </div>
+
+    <div
+      class="btn-group-vertical"
+      role="group"
+      id="activity_selection_div"
+      aria-label="First group"
+    >
+      <button
+        type="button"
+        class="select_quiz btn btn-outline-secondary btn-lg"
+        id="select_activity"
+      >
+        Quiz
+      </button>
+      <button
+        type="button"
+        class="select_grammar_exercises btn btn-outline-secondary btn-lg"
+        id="select_activity"
+      >
+        Grammar Exercise
+      </button>
+      <button
+        type="button"
+        class="select_speech_practice btn btn-outline-secondary btn-lg"
+        id="select_activity"
+      >
+        Speech Practice
+      </button>
+    </div>
+
+    <div id="quiz_content" class="hide">
       <div id="quizes">
         <div class="quiz_question"></div>
         <ul id="answer_list">
@@ -43,14 +73,26 @@
             <label for="d" id="d_text" class="answer"></label>
           </li>
         </ul>
+        <p id="correct_answer"></p>
       </div>
+
       <div id="game_progress">
-        <button type="submit" id="" class="btn d-grid gap-2 btn-lg">
-          Next
-        </button>
-        <button type="submit" id="check_button" class="btn d-grid gap-2 btn-lg">
-          Check
-        </button>
+        <div id="answer_check">
+          <button
+            type="submit"
+            id="next_button"
+            class="btn d-grid gap-2 btn-lg"
+          >
+            Skip
+          </button>
+          <button
+            type="submit"
+            id="check_button"
+            class="btn d-grid gap-2 btn-lg"
+          >
+            Check
+          </button>
+        </div>
       </div>
     </div>
     <script
@@ -59,5 +101,5 @@
       crossorigin="anonymous"
     ></script>
   </body>
-  <script src="main.js"></script>
+  <script defer src="main.js"></script>
 </html>
