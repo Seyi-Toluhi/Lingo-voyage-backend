@@ -22,170 +22,51 @@
     <div class="landing_page">
       <section class="navigation">
         <nav>
-          <ul class="UL">
-            <li><a href="profile.html">Profile</a></li>
-            <div class="dropdown">
-              <button
-                class="btn btn-light"
-                type="button"
-                id="dropdownMenuButton1"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Learn
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>
-                  <a class="dropdown-item" href="learn.html" id="learn_yoruba"
-                    >Yoruba</a
-                  >
-                </li>
-                <li><a class="dropdown-item" href="#">Spanish</a></li>
-                <li><a class="dropdown-item" href="#">Chinese</a></li>
-              </ul>
-            </div>
-          </ul>
+          <div>
+            <a href="profile.html?content=login" class="user_profile"
+              >Profile</a
+            >
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-light"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Learn
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a class="dropdown-item" href="learn.html" id="learn_yoruba"
+                  >Yoruba</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="#">Spanish</a></li>
+              <!--<li><a class="dropdown-item" href="#">Chinese</a></li>-->
+            </ul>
+          </div>
         </nav>
       </section>
 
       <div class="display_center">
         <header class="display-5">Lingo Voyage</header>
         <section id="game_description">
-          <img src="boat.jpg" alt="Image by upklyak on Freepik" />
+          <img src="boat.jpg" alt="Boat Image by upklyak on Freepik" />
           <div>
             <p class="text-center">
-              Lingo language is designed to teach you Yoruba, Spanish and
-              Chinese. You will be engaged in interactive sessions like
-              vocabulary quizes, grammar , speech recognition and time-based
-              challenges. Bon Voyage!
+              Lingo language is designed to teach you Yoruba and Spanish. You
+              will be engaged in interactive sessions like vocabulary quizes,
+              grammar , speech recognition and time-based challenges. Bon
+              Voyage!
             </p>
           </div>
-        </section>
-
-        <section id="signup_form">
-          <!--<fieldset form="Create your profile">-->
-
-          <form action="profile.html" id="account_form">
-            <fieldset>
-              <legend>Create your profile</legend>
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="text"
-                    required
-                    id="Name"
-                    class="form-control col-sm-2"
-                    placeholder="First Name"
-                    aria-label="First name"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="text"
-                    required
-                    id="Age"
-                    class="form-control col-sm-2"
-                    placeholder="Age"
-                    aria-label="Age"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="Email"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    required
-                    id="Email"
-                    class="form-control col-sm-2"
-                    placeholder="Email"
-                    aria-label="Email"
-                    title="Must contain a valid email address"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="password"
-                    minlength="8"
-                    maxlength="20"
-                    required
-                    id="Password"
-                    class="form-control col-sm-2"
-                    placeholder="Password"
-                    aria-label="Password"
-                    title="Must contain a password with mininum length of 8 characters"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <button type="submit" id="signUp" class="btn d-grid gap-2">
-                  Create Acount
-                </button>
-              </div>
-            </fieldset>
-          </form>
-        </section>
-        <section id="login_form">
-          <form action="profile.html" id="login_form">
-            <fieldset>
-              <legend>Log in</legend>
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="text"
-                    required
-                    id="Name"
-                    class="form-control col-sm-2"
-                    placeholder="Email"
-                    aria-label="Email"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <div class="col-sm-20">
-                  <input
-                    type="password"
-                    required
-                    id="Password"
-                    class="form-control col-sm-2"
-                    placeholder="Password"
-                    aria-label="Password"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <button type="submit" id="signIn" class="btn d-grid gap-2">
-                  Sign in
-                </button>
-              </div>
-            </fieldset>
-          </form>
         </section>
       </div>
 
       <div class="login">
-        <button
-          type="button"
-          class="signup_button btn btn-light"
-          id="account_button"
-        >
-          Sign up
-        </button>
-        <button
-          type="button"
-          class="login_button btn btn-light"
-          id="account_button"
-        >
+        <button type="button" class="btn btn-light" id="login_button">
           Log in
         </button>
       </div>

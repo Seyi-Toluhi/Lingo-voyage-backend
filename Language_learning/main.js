@@ -1,11 +1,30 @@
 //const { doc } = require("prettier");
-window.addEventListener("DOMContentLoaded", displayCenter);
+window.addEventListener("DOMContentLoaded", userLogged);
 
-let answerDisplay;
-let correctAnswer;
-let buttonsArr = [];
+let answerDisplay,
+  correctAnswer,
+  userEmail,
+  loginEmail,
+  loginPassword,
+  profileMsg,
+  username,
+  levelDisplay,
+  userLevel;
+
 let selectionArr = [];
+let randomSaved = {};
 let userAcct = { Level: 1 };
+const contentParam = getQueryParam("content");
+
+const imgMatch = [
+  { name: "Omi", image: "water.jpg" },
+  { name: "Ero Ibanisoro", image: "telephone.png" },
+  { name: "Baba", image: "father.jpg" },
+  { name: "Omo", image: "child.jpg" },
+  { name: "Iya", image: "mother.jpg" },
+];
+
+const imageName = ["Baba", "Omi", "Ero Ibanisoro", "Iya", "Omo"];
 
 //selecting elements from HTML
 let profileName = document.querySelector("#Name");
@@ -17,79 +36,170 @@ const check = document.querySelector("#check_button");
 const optionsLabels = document.querySelectorAll(".answer");
 const radioButtons = document.querySelectorAll("input[name='answer']");
 const quizQues = document.querySelector(".quiz_question");
-const accountButtons = document.querySelectorAll("#account_button");
-const signupButton = document.querySelector("#signUp");
+const loginButton = document.querySelector("#login_button");
+const signupButton = document.querySelector("#signup_button");
 const answerCheck = document.querySelector("#answer_check");
-const gameDesc = document.querySelector("#game_description");
 const signupForm = document.querySelector("#signup_form");
-const loginForm = document.querySelector("#login_form");
+const loginForm = document.querySelector("#login_form_div");
 const gameProgress = document.querySelector("#game_progress");
 const selectionButtons = document.querySelectorAll("#select_activity");
 const activityDiv = document.querySelector("#activity_selection_div");
 const quizContent = document.querySelector("#quiz_content");
 const correction = document.querySelector("#correct_answer");
+const grammarExercise = document.querySelector(".grammar_exercise_container");
+const imgWrapper = document.querySelector(".img_wrapper");
+const nameWrapper = document.querySelector(".name_wrapper");
+const loginSubmit = document.querySelector("#login_form");
+//const profile = document.querySelector("#profile");
+const logoutButton = document.querySelector("#logout_button");
+const profileDisplay = document.querySelector("#profile_display");
+const signupInfo = document.querySelector("#signup_info");
 
-//To hide signup and login forms
-function displayCenter() {
-  loginForm.classList.add("hide");
-  signupForm.classList.add("hide");
+//attaching lisening events to login button to redirect to profile page
+
+if (
+  window.location.href ===
+  "file:///C:/Users/seyia/projects/Professional_Portfolio/Language_learning/language-learning.html"
+) {
+  loginButton.addEventListener("click", () => {
+    window.location.href = "profile.html?content=login";
+  });
 }
 
-//attaching lisening events to signup and login form buttons
-for (let i = 0; i < accountButtons.length; i++) {
-  buttonsArr.push(accountButtons[i]);
-  buttonsArr[i].addEventListener("click", accountSaved);
-}
-
-//function to display either signup form or login form when target buttons are clicked
-function accountSaved(e) {
-  e.preventDefault()
-  if (e.target.classList.contains("signup_button")) {
+//To show signup form if a new user wants to sign up
+if (
+  window.location.href ===
+  "file:///C:/Users/seyia/projects/Professional_Portfolio/Language_learning/profile.html?content=login"
+) {
+  signupButton.addEventListener("click", (e) => {
+    e.preventDefault();
     signupForm.classList.remove("hide");
-    gameDesc.classList.add("hide");
+    //loginButton.classList.remove("hide");
     loginForm.classList.add("hide");
-    return acctSetup();
-  } else if (e.target.classList.contains("login_button")) {
-    loginForm.classList.remove("hide");
-    gameDesc.classList.add("hide");
-    signupForm.classList.add("hide");
+    signupInfo.classList.add("hide");
+    signupForm.addEventListener("submit", acctSetup);
+  });
+  logoutButton.addEventListener("click", logOut);
+
+  if (contentParam === "login") {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+      loginForm.classList.add("hide");
+      profileDisplay.classList.remove("hide");
+      userLogged();
+    } else {
+      console.log("yes");
+      loginForm.classList.remove("hide");
+      profileDisplay.classList.add("hide");
+      loginSubmit.addEventListener("submit", handleFormSubmit);
+    }
+  } else {
+    logoutButton.classList.add("hide");
+  }
+}
+
+//To check if a user is already logged in and display name and game level
+function userLogged() {
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (isLoggedIn === "true") {
+    const loggedUser = localStorage.getItem("username");
+    const level = localStorage.getItem("level");
+    console.log(level);
+    profileMsg = document.querySelector("#display_msg");
+    levelDisplay = document.querySelector("#display_level");
+    profileMsg.innerHTML = `Welcome ${loggedUser}`;
+    levelDisplay.innerHTML = `Level: ${level}`;
+    signupInfo.classList.add("hide");
   }
 }
 
 //To store user account details to local storage
-function acctSetup() {
-  signupButton.addEventListener("click", function () {
-    //e.preventDefault();
-    const userName = profileName.value;
-    const userAge = age.value;
-    const userEmail = email.value;
-    const userPassword = password.value;
-    userAcct.Name = userName;
-    userAcct.Age = userAge;
-    userAcct.Email = userEmail;
-    userAcct.Password = userPassword;
+function acctSetup(e) {
+  e.preventDefault();
+  console.log("hello");
+  userEmail = email.value;
+  userAcct.Name = profileName.value;
+  userAcct.Age = age.value;
+  userAcct.Email = userEmail;
+  userAcct.Password = password.value;
+  console.log(userAcct);
 
-    if (!localStorage.getItem(`account${userEmail}`)) {
-      localStorage.setItem(`account${userEmail}`, JSON.stringify(userAcct));
-    }
-    //!profileName.value ==="" && !age.value === "" && !email.value === "" && !password.value === "" &&
-    else {
-      alert("An account already exists with this email address");
-    }
-    //userAcct = JSON.parse(localStorage.getItem(`login`));
-    //console.log(JSON.parse(localStorage.getItem("account")))
-    //localStorage.clear();
-    profileName.value = "";
-    age.value = "";
-    email.value = "";
-    password.value = "";
-  });
+  if (!localStorage.getItem(`account${userEmail}`)) {
+    localStorage.setItem(`account${userEmail}`, JSON.stringify(userAcct));
+    window.location.href = "profile.html?content=login";
+  } else {
+    alert("An account already exists with this email address");
+  }
+
+  profileName.value = "";
+  age.value = "";
+  email.value = "";
+  password.value = "";
 }
+
+function handleFormSubmit(event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Get username and password from form inputs
+  loginEmail = document.querySelector("#login_email").value;
+  loginPassword = document.querySelector("#login_password").value;
+
+  let retrievedForm = getUserForm(loginEmail);
+
+  if (retrievedForm) {
+    console.log(retrievedForm);
+    username = retrievedForm.Name;
+    userLevel = retrievedForm.Level;
+    console.log(userLevel);
+
+    // Perform login validation
+    if (
+      loginEmail === retrievedForm.Email &&
+      loginPassword === retrievedForm.Password
+    ) {
+      // if successful login, store the user details in localStorage
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", username);
+      localStorage.setItem("level", userLevel);
+      // Manipulating the DOM to update content
+      loginForm.classList.add("hide");
+      profileDisplay.classList.remove("hide");
+      userLogged();
+    } else {
+      // Failed login
+      alert("Login failed. Please try again.");
+    }
+  } else {
+    alert("Please create a user account");
+  }
+}
+
+function getUserForm(email) {
+  let userForm = window.localStorage.getItem(`account${email}`);
+  if (userForm) {
+    return JSON.parse(userForm);
+  }
+}
+
+function getQueryParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
+function logOut() {
+  localStorage.removeItem("isLoggedIn", "true");
+  localStorage.removeItem("username", username);
+  localStorage.removeItem("level", userLevel);
+  loginForm.classList.remove("hide");
+  profileDisplay.classList.add("hide");
+  signupInfo.classList.remove("hide");
+}
+//Learn Page Code
 
 //attaching lisening events to activity buttons
 for (let i = 0; i < selectionButtons.length; i++) {
   selectionArr.push(selectionButtons[i]);
-  selectionArr[0].addEventListener("click", selectActivity);
+  selectionArr[i].addEventListener("click", selectActivity);
 }
 
 //function to display activity selected
@@ -97,30 +207,43 @@ function selectActivity(e) {
   activityDiv.classList.add("hide");
   quizContent.classList.remove("hide");
   if (e.target.classList.contains("select_quiz")) {
-    console.log("clicked");
-    return fetchQuiz;
+    console.log("quiz clicked");
+    //const quizButton = e.target;
+    // Feching and dispaying quiz questions
+    //quizButton.addEventListener("click", fetchQuiz);
+    fetchQuiz();
+  } else if (e.target.classList.contains("select_grammar_exercises")) {
+    quizContent.classList.add("hide");
+    console.log("grammar exercise clicked");
+    //const grammarButton = e.target;
+    // Feching and dispaying grammar exercise
+    //grammarButton.addEventListener("click", wordMatch);
+    wordMatch();
+  } else if (e.target.classList.contains("select_speech_practice")) {
+    console.log("grammar exercise clicked");
+    // Feching and dispaying speech practice
+    speechPractice();
   }
 }
 
-// Feching and dispaying quiz questions
-fetchQuiz();
-
 //Picking random quiz from the JSON
-const generateRandom = (size = 12) => {
+const generateRandom = (size) => {
   let randomIndex;
-  let randomSaved = [];
   for (let i = 0; i <= size; i++) {
     randomIndex = Math.floor(Math.random() * 12);
   }
-  randomSaved.push(randomIndex);
-  if (randomIndex !== randomSaved[0]) {
-    randomSaved.pop();
-    return randomIndex;
-  } else {
-    for (let i = 0; i <= size; i++) {
-      randomIndex = Math.floor(Math.random() * 12);
+  if (Object.keys(randomSaved).length < 12) {
+    if (randomSaved[randomIndex] === true) {
+      return;
+    } else {
+      randomSaved[randomIndex] = true;
+      console.log(randomSaved);
+      return randomIndex;
     }
-    return randomIndex;
+  } else {
+    for (let props in randomSaved) {
+      delete randomSaved[props];
+    }
   }
 };
 
@@ -137,7 +260,7 @@ async function fetchQuiz() {
 //dispaying quiz questions
 function displayQuiz(response) {
   const optionsArr = ["a", "b", "c", "d"]; //this array gives me the keys to my quiz answers
-  let rand = generateRandom();
+  let rand = generateRandom(12);
   let obj = response;
   const quiz = obj[rand]["quiz"]; //gives a random question in obj
   correctAnswer = obj[rand]["correctAnswer"]; //stores the correct answer to above random question
@@ -148,11 +271,10 @@ function displayQuiz(response) {
     optionsLabels[i].innerHTML = `${answers}`; //attaching them as labels to radio buttons
     radioButtons[i].setAttribute("value", `${answers}`);
   }
+
+  check.addEventListener("click", checkAnswer);
+  next.addEventListener("click", nextQuiz);
 }
-
-check.addEventListener("click", checkAnswer);
-next.addEventListener("click", nextQuiz);
-
 //compare selected answer with correct answer
 function checkAnswer() {
   let selectedAnswer;
@@ -190,7 +312,7 @@ function checkAnswer() {
     }
     //unable to uncheck radio button
     //radioButtons.setAttribute("checked", false);
-    
+
     gameProgress.appendChild(answerDisplay);
   } else {
     alert("Please pick your answer");
@@ -199,8 +321,56 @@ function checkAnswer() {
 
 //skip current question and load another question
 function nextQuiz() {
-  correction.textContent = ""
+  correction.textContent = "";
   fetchQuiz();
   answerCheck.classList.remove("hide_check");
   gameProgress.removeChild(answerDisplay);
 }
+
+function wordMatch() {
+  let firstClicked;
+  //let secondClicked
+  let firstValue, secondValue;
+  let tempArray = [...imageName];
+  let clickedItems = [];
+  tempArray.sort(() => Math.random() - 0.5);
+  for (let i = 0; i < imgMatch.length; i++) {
+    imgWrapper.innerHTML += `<div class="img-container" data-item-value="${imgMatch[i].name}">
+  <div class="img-display">
+  <img src="image/${imgMatch[i].image}" class="image"/></div>
+  </div>`;
+
+    nameWrapper.innerHTML += `<div class="name-container" data-item-value="${tempArray[i]}"><span>${tempArray[i]}</span>
+  </div>`;
+  }
+  let imgs = Array.from(document.querySelectorAll(".img-container"));
+  let names = Array.from(document.querySelectorAll(".name-container"));
+  clickedItems = [...imgs, ...names];
+  console.log(clickedItems);
+
+  clickedItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      if (!firstClicked) {
+        firstClicked = item;
+        console.log(item);
+        firstValue = item.getAttribute("data-item-value");
+        console.log(firstValue);
+      } else {
+        let secondClicked = item;
+        secondValue = item.getAttribute("data-item-value");
+        console.log(secondValue);
+        if (firstValue === secondValue) {
+          //firstClicked.classList.add("matched");
+          //secondClicked.classList.add("matched")
+          imgWrapper.removeChild(".img-container");
+          nameWrapper.removeChild(".name-container");
+          //firstClicked.removeEventListener()
+          //secondClicked.removeEventListener()
+          firstClicked = false;
+        }
+      }
+    });
+  });
+}
+
+function speechPractice() {}
