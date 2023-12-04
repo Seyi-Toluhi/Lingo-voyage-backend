@@ -18,14 +18,14 @@ let XP_stored = parseInt(localStorage.getItem("XP"));
 console.log(contentParam);
 
 const imgMatch = [
-  { name: "Omi", image: "water.jpg" },
-  { name: "Ero Ibanisoro", image: "telephone.png" },
-  { name: "Baba", image: "father.jpg" },
-  { name: "Omo", image: "child.jpg" },
-  { name: "Iya", image: "mother.jpg" },
+  { name: "el agua", image: "water.jpg" },
+  { name: "un hospital", image: "hospital.jpg" },
+  { name: "un barco", image: "ship.png" },
+  { name: "un coche", image: "car.png" },
+  { name: "una bicicleta", image: "bicycle.png" },
 ];
 
-const imageName = ["Baba", "Omi", "Ero Ibanisoro", "Iya", "Omo"];
+const imageName = ["un barco", "el agua", "un hospital", "una bicicleta", "un coche"];
 
 
 // Select elements from HTML
@@ -355,11 +355,11 @@ function loadActivity(e) {
   //give fetch a try/catch
   async function fetchQuiz() {
     const requestURL =
-      "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/Language_learning/Yoruba.json";
+      "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/Language_learning/Spanish.json";
     const request = new Request(requestURL);
     const response = await fetch(request);
-    const yorubaQuiz = await response.json();
-    displayQuiz(yorubaQuiz);
+    const spanishQuiz = await response.json();
+    displayQuiz(spanishQuiz);
   }
   
   //dispaying quiz questions
@@ -563,7 +563,7 @@ if(!localStorage.getItem("XP_earned")){
 
 const speechPracticeArray = [
     {
-      word: "Omi",
+      word: "el agua",
       options: {
         a: "Cup",
         b: "Water",
@@ -572,46 +572,47 @@ const speechPracticeArray = [
       correctAnswer: "Water"
     },
     {
-      word: "Baba",
+      word: "una bicicleta",
       options: {
-        a: "Mother",
-        b: "Child",
-        c: "Father",
+        a: "Vehicle",
+        b: "Bicycle",
+        c: "Table",
       },
-      correctAnswer: "Father"
+      correctAnswer: "Bicycle"
     },
     {
-      word: "Odabo",
+      word: "un barco",
       options: {
-        a: "Goodbye",
-        b: "Please",
-        c: "Sorry",
+        a: "Ship",
+        b: "Car",
+        c: "House",
       },
-      correctAnswer: "Goodbye"
+      correctAnswer: "Ship"
     },
     {
-      word: "Bawo ni",
+      word: "un coche",
       options: {
-        a: "Thanks",
-        b: "Hello",
-        c: "Sorry",
+        a: "Bicycle",
+        b: "Water",
+        c: "Car",
       },
-      correctAnswer: "Hello"
+      correctAnswer: "Car"
     },
     {
-      word: "Jowo",
+      word: "un hospital",
       options: {
-        a: "Thanks",
-        b: "Sorry",
-        c: "Please",
+        a: "Church",
+        b: "Hospital",
+        c: "Telephone",
       },
-      correctAnswer: "Please"
+      correctAnswer: "Hospital"
     }
   ];
 function speak(e) {
-const utterance = new SpeechSynthesisUtterance(`${e.target.getAttribute("id")}`);
-utterance.voice = speechSynthesis.getVoices()[2];
-speechSynthesis.speak(utterance); // This will speak the provided text
+//const utterance = new SpeechSynthesisUtterance(`${e.target.getAttribute("id")}`);
+//utterance.voice = speechSynthesis.getVoices()[2];
+responsiveVoice.speak(`${e.target.getAttribute("id")}`, "Spanish Female"); // This will speak the provided text
+
 }
 //elements.speech_testing.addEventListener("click", speak)
 //elements.play_word_speech.addEventListener("click", speak)

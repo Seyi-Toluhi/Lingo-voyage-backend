@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Lingo Voyage</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
@@ -17,109 +17,59 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@600&family=Open+Sans:ital@1&family=Roboto:ital,wght@1,700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
-      <header class="display-4">Lingo Voyage</header>
-    </div>
     <div class="landing_page">
       <section class="navigation">
         <nav>
-          <ul class="UL">
-            <li><a href="learn.html">Learn</a></li>
-            <li><a href="">Profile</a></li>
-          </ul>
+          <div>
+            <a href="profile.html?content=login" class="user_profile"
+              >Profile</a
+            >
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-light"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Learn
+            </button>
+            <ul class="dropdown-menu" id="dropdown-menu-style" aria-labelledby="dropdownMenuButton1">
+              <li>
+                <a class="dropdown-item" href="learn-yoruba.html" id="learn_yoruba"
+                  >Yoruba</a
+                >
+              </li>
+              <li><a class="dropdown-item" href="learn-spanish.html">Spanish</a></li>
+              <!--<li><a class="dropdown-item" href="#">Chinese</a></li>-->
+            </ul>
+          </div>
         </nav>
-        <div>
-          <div class="Lang">Yoruba</div>
-          <div class="level">Level 1</div>
-        </div>
       </section>
 
       <div class="display_center">
+        <header>Lingo Voyage</header>
         <section id="game_description">
-          <img src="boat.jpg" alt="Image by upklyak on Freepik" />
+          <img src="boat.jpg" alt="Boat Image by upklyak on Freepik" />
           <div>
-            <em
-              >Lingo language is designed to teach you English, Yoruba, Spanish
-              <br />
-              and Chinese. You will be engaged in interactive sessions like
-              <br />vocabulary quizes, grammar exercises, speech recognition and
-              time-based challenges. Bon Voyage!</em
-            >
+            <p class="text-center">
+              Lingo language is designed to teach you Yoruba and Spanish. You
+              will be engaged in interactive sessions like vocabulary quizes,
+              grammar , speech recognition and time-based challenges. Bon
+              Voyage!
+            </p>
           </div>
-        </section>
-
-        <section id="form_section">
-          <h1>Create your profile</h1>
-          <form id="account_form">
-            <div class="row mb-3">
-              <div class="col-sm-20">
-                <input
-                  type="text"
-                  required
-                  id="Name"
-                  class="form-control col-sm-2"
-                  placeholder="First Name"
-                  aria-label="First name"
-                />
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <div class="col-sm-20">
-                <input
-                  type="text"
-                  required
-                  id="Age"
-                  class="form-control col-sm-2"
-                  placeholder="Age"
-                  aria-label="Age"
-                />
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <div class="col-sm-20">
-                <input
-                  type="Email"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2, 4}$"
-                  required
-                  id="Email"
-                  class="form-control col-sm-2"
-                  placeholder="Email"
-                  aria-label="Email"
-                  title="Must contain a valid email address"
-                />
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <div class="col-sm-20">
-                <input
-                  type="password"
-                  minlength="8"
-                  maxlength="20"
-                  required
-                  id="Password"
-                  class="form-control col-sm-2"
-                  placeholder="Password"
-                  aria-label="Password"
-                />
-              </div>
-            </div>
-
-            <div class="row mb-3">
-              <button type="submit" id="signUp" class="btn d-grid gap-2">
-                Create Acount
-              </button>
-            </div>
-          </form>
         </section>
       </div>
 
       <div class="login">
-        <ul class="login_list"></ul>
+        <button type="button" class="btn " id="login_button">
+          Log in
+        </button>
       </div>
     </div>
 
