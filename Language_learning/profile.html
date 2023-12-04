@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  <div id="profile_content">
     <div>
       <a href="language-learning.html" id="exit_link">Exit</a>
     </div>
@@ -16,6 +17,7 @@
       <div class="level">Level 1</div> -->
         <p><span id="display_msg"></span></p>
         <p><span id="display_level"></span></p>
+        <p><span id="display_score"></span></p>
         <button type="button" id="logout_button">Logout</button>
       </div>
       <section id="signup_form" class="hide">
@@ -54,7 +56,7 @@
               <div class="col-sm-20">
                 <input
                   type="Email"
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                  pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}'
                   required
                   id="Email"
                   class="form-control col-sm-2"
@@ -139,6 +141,8 @@
         </button>
       </div>
     </div>
+  </div>
   </body>
   <script src="main.js"></script>
+  
 </html>
