@@ -1,5 +1,4 @@
 [
-
   {
     "quiz": "What is the correct translation for \"Telephone\"?",
     "answers": {
@@ -120,6 +119,7 @@
       "d": "Baba"
     },
     "correctAnswer": "Omo"
+
   },
     {
     "quiz": "What is the correct translation for \"Telephone\"?",
