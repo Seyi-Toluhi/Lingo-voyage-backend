@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+    <a href="../index.html" id="login_page_exit_link">Exit</a>
+  </div>
+    <section id="login_form_div">
+        <form id="login_form">
+          <fieldset>
+            <legend>Log in</legend>
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="text"
+                  required
+                  name="email_address"
+                  id="login_email"
+                  class="form-control col-sm-2"
+                  placeholder="Email"
+                  aria-label="Email"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="password"
+                  required
+                  id="login_password"
+                  name="password"
+                  class="form-control col-sm-2"
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <button type="submit" id="signIn" class="btn d-grid gap-2">
+                Log in
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <div id="signup_info">
+        <p>Not signed up? click below to create an account</p>
+      
+          <a href="./sign_up.html">Sign up</a>
+
+      </div>
+</body>
+<script type="module" src="../src/main.js"></script>
+</html>

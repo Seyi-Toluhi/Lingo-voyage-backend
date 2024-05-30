@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/style_signup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div>
+    <a href="../index.html" id="exit_link">Exit</a>
+  </div>
+    <section id="signup_form">
+        <form id="account_form">
+          <fieldset>
+            <legend>Create your profile</legend>
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="text"
+                  required
+                  id="first_name"
+                  name="first_name"
+                  class="form-control col-sm-2"
+                  placeholder="First Name"
+                  aria-label="First name"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="number"
+                  required
+                  id="age"
+                  name="age"
+                  class="form-control col-sm-2"
+                  placeholder="Age"
+                  aria-label="Age"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="Email"
+                  pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}'
+                  required
+                  id="email_address"
+                  name="email_address"
+                  class="form-control col-sm-2"
+                  placeholder="Email"
+                  aria-label="Email"
+                  title="Must contain a valid email address"
+                  aria-required="true"
+                />
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <div class="col-sm-20">
+                <input
+                  type="password"
+                  minlength="8"
+                  maxlength="20"
+                  id="password"
+                  name="password"
+                  class="form-control col-sm-2"
+                  placeholder="Password"
+                  aria-label="Password"
+                  title="Must contain a password with mininum length of 8 characters"
+                  aria-required="true"
+                  required
+                />
+              </div>
+            </div>
+    
+            <div class="row mb-3">
+              <button type="submit" id="signUp" class="btn d-grid gap-2">
+                Create Acount
+              </button>
+            </div>
+          </fieldset>
+          </form>
+
+          <div id="get_login_form" class="login">
+            <p>Signed up already? Log into your account</p>
+              <a href="login.html">Log in</a>
+          </div>
+</body>
+<script type="module" src="../src/main.js"></script>
+</html>

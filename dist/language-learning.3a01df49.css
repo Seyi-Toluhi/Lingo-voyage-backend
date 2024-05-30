@@ -1,0 +1,912 @@
+body {
+  --bs-body-font-family: "Libre Franklin", sans-serif;
+  --bs-body-font-family: "Open Sans", sans-serif;
+  --bs-body-font-family: "Roboto", sans-serif;
+  --bs-body-font-size: 20px;
+  --bs-body-bg: #4d4674;
+  --bs-body-color: #333;
+  background-color: #4d4674;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.text-center {
+  color: #fdf1e7;
+}
+
+header {
+  color: #fdf1e7;
+  max-width: 100%;
+  margin-bottom: 15px;
+  padding: 2px 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#dropdownMenuButton1 {
+  color: #fdf1e7;
+  font-size: var(--bs-body-font-size);
+  background-color: #0000;
+  border: none;
+  padding: 10px 10px 0 0;
+  text-decoration: none;
+}
+
+#dropdownMenuButton1:hover {
+  color: #daa520;
+  background-color: #0000;
+  text-decoration: none;
+  transition: all 1s;
+}
+
+a:link, a:visited {
+  color: #fdf1e7;
+  background-color: #0000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #daa520;
+  background-color: #0000;
+  text-decoration: none;
+  transition: all 1s;
+}
+
+.speech_practice_answers {
+  border: solid #ccbfbf;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.speech_practice_answers:hover {
+  cursor: pointer;
+}
+
+#signup_form {
+  width: 400px;
+  margin: 30px 10px 20px 5px;
+  font-size: 30px;
+}
+
+.play_word_speech {
+  color: #0000;
+  background-image: url("https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/sound-icon.png");
+  background-size: 100%;
+  border: none;
+  border-radius: 10px;
+  align-self: self-end;
+  width: 32px;
+  height: 25px;
+  margin-bottom: 3px;
+}
+
+#play_word_speech_div {
+  margin-right: 250px;
+}
+
+#word_speech, #speech_instruction {
+  font-size: 20px;
+}
+
+.navigation {
+  border-color: #c0c0c033;
+  border-right-style: solid;
+  border-right-width: medium;
+  width: 100px;
+  height: 900px;
+  margin: 100px 10px 5px 0;
+  padding-right: 150px;
+}
+
+#dropdown-menu-style {
+  background-color: #0000001a;
+  min-width: 5rem;
+}
+
+#result, #speech_practice_completed {
+  color: #f5f5f5;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 20px;
+  position: absolute;
+}
+
+#signUp, #signIn {
+  border: ;
+  color: #000;
+  background-color: #eaa2f3;
+  margin-top: 2%;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+.grammar_exercise_container {
+  background-color: #f0e6de;
+  border-radius: 10px;
+  flex-direction: row;
+  justify-content: center;
+  width: 1000px;
+  height: 600px;
+  margin-top: 30px;
+  display: flex;
+  position: absolute;
+}
+
+#matching_game_instruction {
+  position: absolute;
+}
+
+.img_wrapper {
+  margin-right: 10%;
+}
+
+.img-container, .name-container {
+  cursor: pointer;
+  text-align: center;
+  border: solid #000;
+  width: 6.25em;
+  height: 5.25em;
+  position: relative;
+  top: 1.5em;
+}
+
+#select_speech_practice_div {
+  color: #000;
+  align-items: c;
+  background-color: #f0e6de;
+  border-radius: 10px;
+  flex-direction: column;
+  width: 60%;
+  height: 60%;
+  padding: 2%;
+  display: flex;
+  position: absolute;
+  top: 7em;
+  left: 20%;
+}
+
+#speech_question_display_div {
+  justify-content: center;
+  margin: 80px;
+  display: flex;
+}
+
+.sparkling-div:before, .sparkling-div:after {
+  opacity: 0;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: .7;
+    transform: translate(-50%, -50%)scale(.1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%)scale(1);
+  }
+}
+
+.sparkling {
+  animation: 2s infinite sparkle;
+}
+
+.disabled {
+  cursor: pointer;
+  text-align: center;
+  pointer-events: none;
+  opacity: .33;
+  border: solid #000;
+  width: 6.25em;
+  height: 5.25em;
+  position: relative;
+  top: 1.5em;
+}
+
+.red-background {
+  cursor: pointer;
+  text-align: center;
+  background-color: red;
+  border: solid #000;
+  width: 6.25em;
+  height: 5.25em;
+  transition: background-color 1s;
+  position: relative;
+  top: 1.5em;
+}
+
+.img-container, .name-container {
+  padding: 20px;
+}
+
+#Password:invalid:focus, #Email:invalid:focus, #Age:invalid:focus, #Name:invalid:focus {
+  border: dashed red;
+}
+
+.navigation {
+  grid-area: left;
+}
+
+.display_center {
+  grid-area: middle;
+}
+
+.login {
+  grid-area: right;
+}
+
+#profile_content {
+  flex-direction: row;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  display: flex;
+}
+
+#profile_display, #signup_form, #signup_info, #signup_button {
+  position: absolute;
+}
+
+.landing_page {
+  grid-template-areas: "left middle middle middle right"
+                       "left middle middle middle right"
+                       "left middle middle middle right"
+                       "left middle middle middle right";
+  gap: 10px;
+  width: 90%;
+  display: grid;
+}
+
+.display_center {
+  flex-direction: column;
+  align-items: center;
+  margin: 90px 0 5px;
+  display: flex;
+}
+
+#quizes {
+  margin-top: 10px;
+}
+
+.login {
+  flex-direction: column;
+  margin: 100px 0 5px;
+  display: flex;
+}
+
+#login_button {
+  color: #fdf1e7;
+  --bs-btn-padding: none;
+  font-size: large;
+}
+
+.login_list, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 5%;
+}
+
+.level, #signup_button {
+  margin-top: 15%;
+}
+
+#game_description {
+  margin-top: 2%;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.matched {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  transition: filter .3s;
+}
+
+.hide_check {
+  visibility: hidden;
+}
+
+.popup-container {
+  background: #00000080;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.popup-content {
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.close-btn {
+  cursor: pointer;
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#answer_check, #answer_div {
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+#correct_answer {
+  margin-top: 50px;
+}
+
+#quiz_content {
+  box-sizing: content-box;
+  background-color: #f0e6de;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 480px;
+  padding: 5%;
+  display: flex;
+  position: absolute;
+  top: 5em;
+  left: 20%;
+  right: 15em;
+}
+
+#activities_div {
+  width: 1000px;
+  height: 400px;
+}
+
+#activity_selection_div {
+  width: 300px;
+  height: 200px;
+  font-weight: bolder;
+  position: absolute;
+  top: 200px;
+}
+
+#select_activity {
+  background-color: #daa520;
+}
+
+.radio_buttons {
+  display: block;
+}
+
+.result-container {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 200px;
+}
+
+#game_description {
+  width: 60%;
+}
+
+#signup_form {
+  width: 500px;
+  height: 50%;
+  position: absolute;
+}
+
+li, #account_button, #game_progress {
+  margin: 30px 0 5px;
+}
+
+#account_button {
+  max-width: 100px;
+}
+
+#select_activity:visited {
+  transition: all .9s;
+}
+
+#login_form {
+  width: 400px;
+  margin: 30px 10px 20px 5px;
+}
+
+@media (width <= 1018px) and (width >= 861px) {
+  .landing_page {
+    grid-template-columns: 180px 360px 180px;
+    width: 800px;
+    margin: 10px;
+    display: grid;
+  }
+
+  header {
+    font-size: calc(1.225rem + .1vw);
+  }
+
+  #login_button {
+    width: 80px;
+    margin-right: 45px;
+    padding: 2px;
+  }
+
+  #signup_form, #login_form_div {
+    width: 600px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  #profile_content {
+    flex-direction: row;
+    justify-content: center;
+    width: 800px;
+    margin-top: 5px;
+    display: flex;
+  }
+
+  #profile {
+    width: 750px;
+  }
+
+  #profile_display, #signup_form {
+    position: absolute;
+  }
+
+  #exit_link {
+    margin-right: 2em;
+  }
+
+  #signup_form, #login_form {
+    width: 400px;
+    margin: 30px 10px 20px 5px;
+  }
+
+  #signup_info, #signup_button {
+    margin-top: 5px;
+  }
+
+  #account_button {
+    padding: 2px;
+  }
+
+  #quiz_content {
+    background-color: #fdf1e7;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 500px;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 4em;
+    left: 15%;
+  }
+
+  #select_speech_practice_div {
+    align-items: s;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 5em;
+    left: 12%;
+  }
+
+  #play_word_speech_div {
+    margin-right: 60px;
+  }
+
+  #speech_question_display_div {
+    justify-content: space-around;
+    margin: 80px;
+    display: flex;
+  }
+}
+
+@media (width <= 860px) and (width >= 531px) {
+  .landing_page {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 500px;
+    margin: 5px;
+    display: flex;
+  }
+
+  .navigation {
+    border-right: none;
+    width: 100px;
+    padding: 0 20px 0 0;
+  }
+
+  header {
+    font-size: 1.2em;
+  }
+
+  #dropdownMenuButton1, #login_button, .user_profile, .dropdown {
+    font-size: 17px;
+  }
+
+  #dropdown-menu-style {
+    background-color: #0000001a;
+    min-width: 5rem;
+  }
+
+  .dropdown-item {
+    font-size: 13px;
+  }
+
+  .text-center {
+    font-size: 15px;
+  }
+
+  #login_button {
+    width: 80px;
+    margin-left: 25px;
+    padding: 2px;
+  }
+
+  .display_center, #game_description {
+    width: 200px;
+  }
+
+  #profile_content {
+    flex-direction: row;
+    justify-content: center;
+    width: 500px;
+    margin-top: 5px;
+    display: flex;
+  }
+
+  #profile {
+    width: 450px;
+  }
+
+  #profile_display, #signup_form {
+    position: absolute;
+  }
+
+  #exit_link {
+    margin-right: 2em;
+  }
+
+  #signup_form, #login_form {
+    width: 250px;
+    margin: 30px 10px 20px 5px;
+  }
+
+  #signup_info, #signup_button {
+    margin-top: 5px;
+  }
+
+  #account_button {
+    padding: 2px;
+  }
+
+  #quiz_content {
+    background-color: #fdf1e7;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 500px;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: fixed;
+    top: 4em;
+    left: 15%;
+  }
+
+  #select_speech_practice_div {
+    align-items: s;
+    flex-direction: column;
+    width: 80%;
+    height: 75%;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 5em;
+    left: 12%;
+  }
+
+  #play_word_speech_div {
+    margin-right: 60px;
+  }
+
+  #speech_question_display_div {
+    justify-content: space-around;
+    margin: 80px;
+    display: flex;
+  }
+}
+
+@media (width <= 530px) and (width >= 421px) {
+  .landing_page {
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 450px;
+    margin: 5px;
+    display: flex;
+  }
+
+  .navigation {
+    border-right: none;
+    width: 100px;
+    padding: 0 20px 0 0;
+  }
+
+  header {
+    font-size: 1.2em;
+  }
+
+  #dropdownMenuButton1, #login_button, .user_profile, .dropdown {
+    font-size: 15px;
+  }
+
+  #dropdown-menu-style {
+    background-color: #0000001a;
+    min-width: 5rem;
+  }
+
+  .dropdown-item {
+    font-size: 13px;
+  }
+
+  .text-center {
+    font-size: 14px;
+  }
+
+  #login_button {
+    width: 80px;
+    margin-left: 20px;
+    padding: 2px;
+  }
+
+  #game_description, #signup_form, #login_form {
+    width: 150px;
+  }
+
+  #profile_content {
+    flex-direction: row;
+    justify-content: center;
+    width: 350px;
+    margin-top: 5px;
+    display: flex;
+  }
+
+  #profile {
+    width: 300px;
+  }
+
+  #profile_display, #signup_form {
+    position: absolute;
+  }
+
+  #exit_link {
+    margin-right: 2em;
+  }
+
+  #signup_form, #login_form {
+    width: 150px;
+    margin: 30px 10px 20px 5px;
+  }
+
+  #signup_info, #signup_button {
+    margin-top: 5px;
+  }
+
+  #account_button {
+    padding: 2px;
+  }
+
+  #quiz_content {
+    background-color: #fdf1e7;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 500px;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 4em;
+    left: 15%;
+  }
+
+  #select_speech_practice_div {
+    align-items: s;
+    flex-direction: column;
+    width: 80%;
+    height: 70%;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 5em;
+    left: 12%;
+  }
+
+  #play_word_speech_div {
+    margin-right: 60px;
+  }
+
+  #speech_question_display_div {
+    justify-content: space-around;
+    margin: 80px;
+    display: flex;
+  }
+
+  #correct_answer {
+    font-size: 20px;
+  }
+}
+
+@media (width <= 420px) and (width >= 360px) {
+  .landing_page {
+    justify-content: space-between;
+    width: 350px;
+    margin: 5px;
+    display: flex;
+  }
+
+  .navigation {
+    border-right: none;
+    width: 100px;
+    padding: 0 20px 0 0;
+  }
+
+  header {
+    font-size: 1em;
+  }
+
+  #dropdownMenuButton1, #login_button, .user_profile, .dropdown {
+    font-size: 15px;
+  }
+
+  .dropdown-item {
+    font-size: 13px;
+  }
+
+  .text-center {
+    font-size: 14px;
+  }
+
+  #dropdown-menu-style {
+    background-color: #0000001a;
+    min-width: 5rem;
+  }
+
+  #login_button {
+    width: 70px;
+    margin-left: 20px;
+    padding: 2px;
+  }
+
+  #game_description {
+    width: 150px;
+  }
+
+  #profile_content {
+    flex-direction: row;
+    justify-content: center;
+    width: 350px;
+    margin-top: 5px;
+    display: flex;
+  }
+
+  #profile {
+    width: 300px;
+  }
+
+  #profile_display, #signup_form {
+    position: absolute;
+  }
+
+  #exit_link {
+    margin-right: 2em;
+  }
+
+  #signup_form, #login_form {
+    width: 150px;
+    margin: 30px 10px 20px 5px;
+  }
+
+  #signup_info, #signup_button {
+    margin-top: 5px;
+  }
+
+  #account_button {
+    padding: 2px;
+  }
+
+  #activities_div {
+    flex-direction: row;
+    justify-content: center;
+    width: 350px;
+    display: flex;
+  }
+
+  #quiz_content {
+    background-color: #fdf1e7;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    height: 500px;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 4em;
+    left: 15%;
+  }
+
+  .grammar_exercise_container {
+    width: 80%;
+    height: 80%;
+    margin-top: 12px;
+    font-size: 20px;
+    position: absolute;
+    top: 4em;
+    left: 15%;
+  }
+
+  #select_speech_practice_div {
+    align-items: s;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
+    margin-top: 12px;
+    padding: 2%;
+    font-size: 20px;
+    display: flex;
+    position: absolute;
+    top: 4em;
+    left: 12%;
+  }
+
+  #play_word_speech_div {
+    margin-right: 60px;
+  }
+
+  #speech_question_display_div {
+    justify-content: space-around;
+    margin: 80px;
+    display: flex;
+  }
+
+  #correct_answer {
+    font-size: 20px;
+  }
+}
+
+/*# sourceMappingURL=language-learning.3a01df49.css.map */
