@@ -1,0 +1,353 @@
+:root {
+    /* --button-color: #235391; */
+    --button-hover-color: #00DDB3;
+    --button-text-color: #235391;
+    --button-border-radius: 12px;
+    --bg-color: #f5f5f5;
+    --nav-bg-color: #ffffff;
+    --nav-text-color: #235391;
+    --primary-color: #235391;
+    --secondary-color: #00DDB3;
+    --text-color: #ffffff;
+    --border-radius: 12px;
+    --input-bg-color: #ffffff;
+    --input-border-color: #dddddd;
+    --input-text-color: #333333;
+  }
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    color:var(--primary-color);
+  }
+  
+  a {
+    text-decoration: none;
+    color: #235391;
+  }
+  
+  /* Header styles */
+  #exit_link {
+    margin-bottom: 20px;
+  }
+  
+  /* Activity selection styles */
+  #activity_selection_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+  height: 200px;
+  top: 200px;
+  font-weight: bolder;
+    
+  }
+  
+  .select_activity {
+    margin: 10px;
+  }
+  
+  /* Button styles */
+  .btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .btn-outline-secondary {
+    border: 1px solid #ccc;
+    color:var(--primary-color);
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: var(--button-hover-color)
+  }
+  
+  /* Quiz styles */
+  #quiz_content {
+    margin-top: 20px;
+  }
+  
+  .quiz_question {
+    margin-bottom: 20px;
+  }
+  
+  #answer_list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .answer {
+    margin-left: 10px;
+  }
+  
+  /* Grammar exercise styles */
+  .grammar_exercise_container {
+    margin-top: 20px;
+  }
+  
+  #matching_game_instruction {
+    margin-bottom: 10px;
+  }
+  
+  /* Speech practice styles */
+  #select_speech_practice_div {
+    margin-top: 20px;
+  }
+  
+  #speech_instruction {
+    margin-bottom: 10px;
+  }
+  
+  #speech_question_display_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  #word_speech {
+    margin-top: 10px;
+  }
+  
+  .popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #answer_check,
+#answer_div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#correct_answer {
+  margin-top: 50px;
+}
+
+#quiz_content {
+  box-sizing: content-box;
+  top: 10em;
+  left: 20%;
+  height: 480px;
+  width: 50%;
+  right: 15em;
+  /*top: 100px;*/
+  background-color: #f0e6de;
+  
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+  border-radius: 10px;
+}
+#activities_div{
+  width: 1000px;
+  height: 400px;
+}
+.result-container{ 
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 200px;}
+  #feedbackMessage {
+    /* Add your feedback message styles here */
+  }
+  #select_activity:visited {
+    transition: 0.9s;
+    
+  }
+  #speech_practice_completed {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .hide {
+    visibility: hidden;
+    /*display: none;*/
+  }
+  
+  .matched {
+    background-color: #f0f0f0;
+    transition: filter 0.3s; /* Add a smooth transition for the blur effect */
+    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  }
+  
+  .hide_check {
+    visibility: hidden;
+  }
+
+  .play_word_speech{
+    background-image: url("https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/sound-icon.png");
+    width: 4em;
+    height: 3em;
+    /* height: 25px; /* Set the height of the button */
+    /* border: none; /* Remove border to make it look like a plain image */
+    border-radius: 10px;
+    background-size:100%; /* This property ensures the background image covers the entire button */
+    color: transparent; /* Make the button text transparent if you only want to display the background image */
+    align-self:self-end;  
+    margin-bottom: 3px;
+  
+  }
+  #word_speech, #speech_instruction{font-size: 20px;}
+.navigation {
+  width: 100px;
+  height: 900px;
+  border-right: solid;
+  border-color: rgba(192, 192, 192, 0.2);
+  margin: 100px 10px 5px 0px;
+  padding-right: 150px;
+} 
+
+#result, #speech_practice_completed{
+    position: absolute;
+    font-size: 20px;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  .grammar_exercise_container {
+    position: absolute;
+    display: flex;
+    top: 10em;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #f0e6de;
+    width: 1000px;
+    height: 600px;
+    margin-top: 30px;
+    border-radius: 10px;
+  }
+  #matching_game_instruction{
+    position: absolute;
+  }
+  .img_wrapper {
+    margin-right: 10%;
+  }
+  .img-container,
+.name-container {
+  position: relative;
+  top:1.5em;
+  width: 6.25em;
+  height: 5.25em;
+  cursor: pointer;
+  border: solid black;
+  text-align: center;
+}
+
+#select_speech_practice_div{
+  position: absolute;
+  top: 10em;
+  left: 20%;
+  height: 60%;
+  width: 60%;
+  padding: 2em;
+  background-color: #f0e6de;
+  color: black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: c;
+  padding: 2%;
+}
+
+
+#speech_question_display_div{
+  display: flex;
+  justify-content: center;
+  margin: 80px;
+}
+.sparkling-div::before,
+.sparkling-div::after {
+  background-color: #FFF; /* Sparkle color (white) */
+  border-radius: 50%;
+  opacity: 0;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.sparkling {
+  animation: sparkle 2s infinite;
+}
+
+.disabled {
+  position: relative;
+  top:1.5em;
+  width: 6.25em;
+  height: 5.25em;
+  cursor: pointer;
+  border: solid black;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0.33;
+}
+
+.red-background {
+  top:1.5em;
+  width: 6.25em;
+  height: 5.25em;
+  cursor: pointer;
+  text-align: center;
+  border: solid black;
+  background-color: red; /* Set the initial background color to red */
+  position: relative;
+  transition: background-color 1s; /* Add a smooth transition for the background color */
+}
+
+.img-container, .name-container{padding: 20px;}
+#Password:invalid:focus,
+#Email:invalid:focus,
+#Age:invalid:focus,
+#Name:invalid:focus {
+  /*background-image: linear-gradient(pink, lightgreen);*/
+  border: dashed red;
+}
+
+img {
+    max-width: 100%;
+    margin-bottom: 5%;
+  }
