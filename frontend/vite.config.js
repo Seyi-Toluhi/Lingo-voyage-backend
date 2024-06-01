@@ -14,6 +14,9 @@ export default defineConfig(({ command, mode }) => {
         enabled: true,
         reporter: ['text', 'html']
       }
+    },
+    build: {
+      outDir: 'build' // Specify the custom output directory here
     }
   };
 });
