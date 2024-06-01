@@ -32,14 +32,6 @@ jobs:
         with:
           node-version: '21.7.1'
 
-      - name: Install Node.js dependencies
-        working-directory: ./frontend  # Adjust this path as needed
-        run: npm install
-
-      - name: Build frontend
-        working-directory: ./frontend  # Adjust this path as needed
-        run: npm run build
-
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
 
