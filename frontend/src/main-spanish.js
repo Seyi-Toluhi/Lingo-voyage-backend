@@ -1,4 +1,4 @@
-const BACKEND_URL =
+const BACKEND_URL = "http://localhost:5000"
 document.addEventListener("DOMContentLoaded", initialize);
 
 //decide which of these need to be global variables
