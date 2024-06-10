@@ -327,7 +327,7 @@ function hideActivities() {
 //api call to fetct quiz json file from github where ive hosted it 
 async function fetchQuiz() {
   try {
-    const requestURL = "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/Language_learning/frontend/src/json_files/Yoruba.json";
+    const requestURL = "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/frontend/src/json_files/Yoruba.json";
   const request = new Request(requestURL);
   const response = await fetch(request);
   const yorubaQuiz = await response.json();

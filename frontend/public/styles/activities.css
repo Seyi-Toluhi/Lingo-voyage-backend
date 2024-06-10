@@ -183,9 +183,7 @@ body {
     width: 400px;
     height: 200px;
     top: 200px;}
-  #feedbackMessage {
-    /* Add your feedback message styles here */
-  }
+
   #select_activity:visited {
     transition: 0.9s;
     
@@ -202,9 +200,8 @@ body {
   
   .matched {
     background-color: #f0f0f0;
-    transition: filter 0.3s; /* Add a smooth transition for the blur effect */
-    cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
-  }
+    transition: filter 0.3s; 
+    cursor: pointer; }
   
   .hide_check {
     visibility: hidden;
@@ -212,18 +209,26 @@ body {
 
   .play_word_speech{
     background-image: url("https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/sound-icon.png");
-    width: 4em;
-    height: 3em;
-    /* height: 25px; /* Set the height of the button */
-    /* border: none; /* Remove border to make it look like a plain image */
+    width: 2.6em;
+    height: 2em;
+    color: white;                    /* Button text color */
+    border: none;
+    padding: 10px 20px;
     border-radius: 10px;
-    background-size:100%; /* This property ensures the background image covers the entire button */
-    color: transparent; /* Make the button text transparent if you only want to display the background image */
+    background-size:100%; 
+    color: transparent; 
     align-self:self-end;  
-    margin-bottom: 3px;
+    margin-right: 15px; 
+    margin-bottom: 10px;
+    border-radius: 5px;              /* Round the button corners */
+    cursor: pointer;                 /* Pointer cursor on hover */
+    font-size: 16px;                 /* Font size for button text */
+    transition: background-color 0.3s;
   
   }
-  #word_speech, #speech_instruction{font-size: 20px;}
+
+#word_speech, #speech_instruction{font-size: 20px;}
+
 .navigation {
   width: 100px;
   height: 900px;
@@ -240,6 +245,35 @@ body {
     text-align: center;
     margin-top: 100px;
   }
+
+#play_word_speech_div{
+  display: flex;                   
+  align-items: center; 
+  margin-bottom: 20px;
+}
+
+.speech_practice_answers {
+    display: inline-block;          
+    padding: 10px 20px;             
+    margin: 5px;                    
+    background-color:var(--primary-color);      
+    color: white;                   
+    border: none;                  
+    border-radius: 5px;             
+    text-align: center;            
+    cursor: pointer;                
+    font-size: 16px;                
+    font-family: Arial, sans-serif; 
+    transition: background-color 0.3s; 
+}
+
+.speech_practice_answers:hover {
+    background-color: #0056b3;      
+}
+
+.speech_practice_answers:active {
+    background-color: #003f7f;      
+}
 
   .grammar_exercise_container {
     position: absolute;
@@ -285,7 +319,9 @@ body {
   align-items: c;
   padding: 2%;
 }
-
+#close-button{
+  margin-bottom: 20px
+}
 
 #speech_question_display_div{
   display: flex;
@@ -294,11 +330,12 @@ body {
 }
 .sparkling-div::before,
 .sparkling-div::after {
-  background-color: #FFF; /* Sparkle color (white) */
+  background-color: #FFF;
   border-radius: 50%;
   opacity: 0;
 }
-
+#speech_practice_answer_div{
+cursor: pointer;}
 @keyframes sparkle {
   0% {
     transform: translate(-50%, -50%) scale(0.1);
@@ -333,9 +370,9 @@ body {
   cursor: pointer;
   text-align: center;
   border: solid black;
-  background-color: red; /* Set the initial background color to red */
+  background-color: red; 
   position: relative;
-  transition: background-color 1s; /* Add a smooth transition for the background color */
+  transition: background-color 1s; 
 }
 
 .img-container, .name-container{padding: 20px;}
@@ -343,7 +380,6 @@ body {
 #Email:invalid:focus,
 #Age:invalid:focus,
 #Name:invalid:focus {
-  /*background-image: linear-gradient(pink, lightgreen);*/
   border: dashed red;
 }
 
