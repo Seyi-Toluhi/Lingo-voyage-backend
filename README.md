@@ -6,3 +6,5 @@ Frontend (HTML, CSS, JavaScript, Node.js, Express and Jest)
 Backend (Python, Flask, PostgreSQL and Pytest)
 
 # Demo
+[Watch Lingo Voyage Demo](path_to_your_video.mp4)
+
