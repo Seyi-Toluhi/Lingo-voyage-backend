@@ -31,17 +31,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '21.7.1'
-
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
-
-      - name: Create & configure a new Netlify site
-        run: netlify init --manual
-
-      - name: Deploy to Netlify
-        run: 
-          npx vite build
-          netlify deploy --prod --dir=build
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           BACKEND_URL: ${{ secrets.BACKEND_URL }}
