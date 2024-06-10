@@ -211,7 +211,7 @@ body {
     background-image: url("https://uxwing.com/wp-content/themes/uxwing/download/controller-and-music/sound-icon.png");
     width: 2.6em;
     height: 2em;
-    color: white;                    /* Button text color */
+    color: white;                    
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
@@ -220,9 +220,9 @@ body {
     align-self:self-end;  
     margin-right: 15px; 
     margin-bottom: 10px;
-    border-radius: 5px;              /* Round the button corners */
-    cursor: pointer;                 /* Pointer cursor on hover */
-    font-size: 16px;                 /* Font size for button text */
+    border-radius: 5px;              
+    cursor: pointer;                 
+    font-size: 16px;                
     transition: background-color 0.3s;
   
   }
