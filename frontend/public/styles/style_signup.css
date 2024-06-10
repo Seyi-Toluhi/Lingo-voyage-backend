@@ -21,23 +21,27 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
   }
   
-  #exit_link {
+  #sign_up_page_exit{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
   }
   
   #signup_form {
     color: white;
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
+    margin: 100px auto;
   }
   
   #signup_form legend {
@@ -78,3 +82,19 @@ body {
     margin-bottom: 10px;
   }
   
+  #get_login_form a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  #signUp{    
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;}

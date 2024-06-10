@@ -106,7 +106,7 @@ function loadActivity(e) {
 
   //api call to fetct spanish quiz json file from github where ive hosted it 
   async function fetchQuiz() {
-   try { const requestURL = "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/Language_learning/frontend/src/json_files/Spanish.json";
+   try { const requestURL = "https://raw.githubusercontent.com/Seyi-Toluhi/language_learning_app/main/frontend/src/json_files/Spanish.json";
     const request = new Request(requestURL);
     const response = await fetch(request);
     const spanishQuiz = await response.json();
