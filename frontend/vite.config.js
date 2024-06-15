@@ -1,12 +1,12 @@
 import { defineConfig, loadEnv } from 'vite';
 
 export default defineConfig(({ command, mode }) => {
-  // Load environment variables
   const env = loadEnv(mode, process.cwd(), '');
   return {
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
+    root: './',
     test: {
       globals: true,
       environment: "jsdom",
@@ -16,7 +16,12 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     build: {
-      outDir: 'build' // Specify the custom output directory here
+      outDir: '../dist', 
+      rollupOptions: {
+        input: {
+          main: './index.html',
+        },
     }
-  };
+  }
+}
 });

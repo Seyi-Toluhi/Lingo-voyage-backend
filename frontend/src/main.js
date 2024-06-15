@@ -100,14 +100,7 @@ function attachEventListeners() {
     document.getElementById("closePopup").addEventListener("click", closePopup);
   }
 }
-        
-// let animation = lottie.loadAnimation({
-  //   container: document.getElementById('lottie-animation'), // the dom element that will contain the animation
-  //   renderer: 'svg',
-  //   loop: true,
-  //   autoplay: true,
-  //   path: 'https://assets2.lottiefiles.com/packages/lf20_hh15zjiv.json' // replace this with the URL to your chosen animation
-  // });
+
 
 //function to hide logout/delete account buttons on profile page if no user is logged in
 function hideProfileButtons(){
