@@ -3,7 +3,6 @@ from flask import g
 from psycopg.rows import dict_row
 
 
-
 # This class helps us interact with the database.
 # It wraps the underlying psycopg library that we are using.
 
@@ -16,17 +15,19 @@ class DatabaseConnection:
 
     def __init__(self, test_mode=False):
         self.test_mode = test_mode
+        self.connection = None
 
     # This method connects to PostgreSQL using the psycopg library. We connect
     # to localhost and select the database name given in argument.
     def connect(self):
         try:
-            self.connection = psycopg.connect(
-                f"postgresql://localhost/{self._database_name()}",
-                row_factory=dict_row)
+            database_url = os.getenv('DATABASE_URL')
+            if not database_url:
+                database_url = f"postgresql://localhost/{self._database_name()}"
+            self.connection = psycopg.connect(database_url, row_factory=dict_row)
         except psycopg.OperationalError:
             raise Exception(f"Couldn't connect to the database {self._database_name()}! " \
-                    f"Did you create it using `createdb {self._database_name()}`?")
+                            f"Did you create it using `createdb {self._database_name()}`?")
 
     # This method seeds the database with the given SQL file.
     # We use it to set up our database ready for our tests or application.
@@ -70,11 +71,11 @@ class DatabaseConnection:
             return self.DEV_DATABASE_NAME
 
 # This function integrates with Flask to create one database connection that
-# Flask request can use. To see how to use it, look at example_routes.py
+# Flask request can use.
 def get_flask_database_connection(app):
     if not hasattr(g, 'flask_database_connection'):
         g.flask_database_connection = DatabaseConnection(
-            test_mode=True)
-            # test_mode=os.getenv('APP_ENV') == 'test')
+            # test_mode=True)
+            test_mode=os.getenv('APP_ENV') == 'test')
         g.flask_database_connection.connect()
     return g.flask_database_connection
