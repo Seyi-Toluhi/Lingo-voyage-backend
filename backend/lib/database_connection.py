@@ -3,13 +3,11 @@ from flask import g
 from psycopg.rows import dict_row
 
 
-# This class helps us interact with the database.
-# It wraps the underlying psycopg library that we are using.
+# This class helps interact with the database.
+# It wraps the underlying psycopg library that is used.
 
-# If the below seems too complex right now, that's OK.
-# That's why we have provided it!
+
 class DatabaseConnection:
-    # VVV CHANGE BOTH OF THESE VVV
     DEV_DATABASE_NAME = "Lingo_voyage"
     TEST_DATABASE_NAME = "Lingo_voyage_test"
 
@@ -17,7 +15,7 @@ class DatabaseConnection:
         self.test_mode = test_mode
         self.connection = None
 
-    # This method connects to PostgreSQL using the psycopg library. We connect
+    # This method connects to PostgreSQL using the psycopg library. It connects
     # to localhost and select the database name given in argument.
     def connect(self):
         try:
@@ -30,7 +28,7 @@ class DatabaseConnection:
                             f"Did you create it using `createdb {self._database_name()}`?")
 
     # This method seeds the database with the given SQL file.
-    # We use it to set up our database ready for our tests or application.
+    # it is used to set up our database ready for the tests or application.
     def seed(self, sql_filename):
         self._check_connection()
         if not os.path.exists(sql_filename):
@@ -40,7 +38,7 @@ class DatabaseConnection:
             self.connection.commit()
 
     # This method executes an SQL query on the database.
-    # It allows you to set some parameters too. You'll learn about this later.
+    # It allows for setting some parameters too.
     def execute(self, query, params=[]):
         self._check_connection()
         with self.connection.cursor() as cursor:
@@ -58,12 +56,12 @@ class DatabaseConnection:
         'make sure to call first the method DatabaseConnection.connect` ' \
         'in your app.py file (or in your tests)?'
 
-    # This private method checks that we're connected to the database.
+    # This private method checks that there is connection to the database.
     def _check_connection(self):
         if self.connection is None:
             raise Exception(self.CONNECTION_MESSAGE)
 
-    # This private method returns the name of the database we should use.
+    # This private method returns the name of the database that should be used.
     def _database_name(self):
         if self.test_mode:
             return self.TEST_DATABASE_NAME
