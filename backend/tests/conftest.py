@@ -4,8 +4,7 @@ from lib.database_connection import DatabaseConnection
 from app import app
 
 # This is a Pytest fixture.
-# It creates an object that we can use in our tests.
-# We will use it to create a database connection.
+# It creates an object that can be used in our tests to create a database connection.
 @pytest.fixture
 def db_connection():
     conn = DatabaseConnection(test_mode=True)
@@ -13,7 +12,6 @@ def db_connection():
     return conn
 
 # This fixture starts the test server and makes it available to the tests.
-# You don't need to understand it in detail.
 @pytest.fixture
 def test_web_address(xprocess):
     python_executable = sys.executable
@@ -31,7 +29,7 @@ def test_web_address(xprocess):
     xprocess.getinfo("flask_test_server").terminate()
 
 
-# Now, when we create a test, if we allow it to accept a parameter called
+# Now a test is created, if we allow it to accept a parameter called
 # `db_connection` or `test_web_address`, Pytest will automatically pass in the
 # objects we created above.
 

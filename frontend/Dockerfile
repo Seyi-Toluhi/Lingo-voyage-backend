@@ -1,22 +1,22 @@
-# Use a Node.js base image
+# Node.js base image
 FROM node:14
 
-# Set the working directory
+# Setting the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copying package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
+# Installing dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copying the rest of the application code
 COPY . .
 
-# Build the frontend application
+# Building the frontend application
 RUN npm run build
 
-# Serve the built app using a simple HTTP server
+# Serving the built app using a simple HTTP server
 RUN npm install -g serve
 
 # Command to run the app
