@@ -6,7 +6,8 @@ export default defineConfig(({ command, mode }) => {
     define: {
       __APP_ENV__: JSON.stringify(env.APP_ENV),
     },
-    root: './',
+    root: path.resolve(__dirname, 'frontend'),
+    base: '/', 
     test: {
       globals: true,
       environment: "jsdom",
@@ -16,10 +17,12 @@ export default defineConfig(({ command, mode }) => {
       }
     },
     build: {
-      outDir: '../dist', 
+      outDir: path.resolve(__dirname, 'dist'),
       rollupOptions: {
         input: {
-          main: './index.html',
+          main: './index.html', // Path to index.html
+          main_js: './src/main.js', // Path to main.js
+          other_js: './src/main-spanish.js', // Path to main-spanish.js
         },
     }
   }
