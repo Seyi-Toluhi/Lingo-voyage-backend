@@ -8,12 +8,12 @@ from lib.user_repository import UserRepository
 from lib.user import User
 from functools import wraps
 
-# Providing the path to your SQL file
+# Providing the path to my SQL file
 sql_filename = "seeds/lingovoyage.sql"  
 
-# Creating a new Flask app
+# Creating a Flask app
 app = Flask(__name__)
-# Allow CORS for http://localhost:3000
+# Allowing CORS for my frontend
 CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
 
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'default_secret_key')
@@ -25,7 +25,7 @@ def token_required(f):
             return jsonify({'message': 'Token is missing!'}), 403
         
         try:
-            token = token.split(" ")[1]  # Extract token from "Bearer <token>"
+            token = token.split(" ")[1]  
             payload = jwt.decode(token, app.secret_key, algorithms=['HS256'])
             user_id = payload['user_id']
         except jwt.ExpiredSignatureError:
@@ -56,7 +56,7 @@ def create_user():
     try:
         connection = get_flask_database_connection(app)
         user_repo = UserRepository(connection)
-        # Get the JSON data from the request
+        # Getting the JSON data from the request
         data = request.get_json()
         user = User(
             None,
@@ -127,7 +127,6 @@ def updateUserScore(user_id):
     try:
         connection = get_flask_database_connection(app)
         user_repo = UserRepository(connection)
-        # Get the JSON data from the request
         data = request.get_json()
         print(data)
         user_id = data['id']
@@ -150,7 +149,6 @@ def delete_user(user_id):
     try:
         connection = get_flask_database_connection(app)
         user_repo = UserRepository(connection)
-        # Get the JSON data from the request
         data = request.get_json()
         print(data)
         user_id = data['id']
