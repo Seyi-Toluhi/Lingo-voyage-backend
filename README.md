@@ -23,7 +23,8 @@ It also features the Speech Synthesis Utterance API, a part of the Web Speech AP
 
 # Tech Stack
 - **Frontend:** HTML, CSS, JavaScript, Node and Express for a dynamic and responsive user interface. 
-- **Backend:** Python, Flask for robust server-side logic and API endpoints. Database: PostgreSQL for flexible and scalable data storage.
+- **Backend:** Python and Flask for robust server-side logic and API endpoints. 
+- **Database:** PostgreSQL for flexible and scalable data storage.
 
 # Author 
 Seyi Toluhi - https://github.com/Seyi-Toluhi
@@ -36,19 +37,21 @@ https://excalidraw.com/#json=06I5dszO72cMUq5_G2Mey,oWxinqSJo3bMObHoWjOeew
 
 # API Documents 
 
-Getting Started
-To set up the Lingo voyage project locally, follow these steps:
+Getting Started: To set up the Lingo voyage project locally, follow these steps:
 
 # Prerequisites
 Install Node, Express and Jest in frontend directory:
 
 
-Frontend - run cd frontend in your terminal to navigate to frontend directory
+- **run cd frontend in your terminal to navigate to frontend directory**
 - **Node:** Go to the [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) website and download the installer for your operating system
 - **Express:** npm init -y and npm install express
 - **Jest:** run npm install --save-dev jest
 
 Install Python3, Pip, PostgreSQL and Pytest in backend directory:
+
+
+- **run cd backend in your terminal to navigate to backend directory**
 - **Python3:** Go to the official [Python](https://www.python.org/doc/) website. Click on the "Download Python 3.x.x" button.
 - **Pip:** If not already installed, python -m ensurepip --upgrade
 - **PostgreSQL:** Go to the official [PostgreSQL](https://www.postgresql.org/download/windows/) website. Click on the "Download the installer" link
@@ -75,6 +78,7 @@ Start the frontend express server: run node server.js
 
 The frontend should now be running on http://localhost:3000.
 
+
 Navigate to the backend directory: cd backend
 
 
@@ -82,6 +86,7 @@ Start the backend flask server: python3 app.py
 
 
 The backend should now be running on port 5000
+
 
 # Run Tests
 - **cd frontend:** run jest
