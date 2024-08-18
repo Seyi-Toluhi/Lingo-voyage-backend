@@ -23,7 +23,7 @@
 - **Frontend:** HTML, CSS, JavaScript, Node and Express for a dynamic and responsive user interface. 
 - **Backend:** Python, Flask for robust server-side logic and API endpoints. Database: PostgreSQL for flexible and scalable data storage.
 
-# Author: Seyi Toluhi - https://github.com/Seyi-Toluhi
+Author: Seyi Toluhi - https://github.com/Seyi-Toluhi
 
 # Trello
 https://trello.com/b/5xZqdOIU/lingo-voyage
@@ -39,19 +39,18 @@ To set up the Lingo voyage project locally, follow these steps:
 # Prerequisites
 Install Node, Express and Jest in frontend directory:
 Frontend - run cd frontend in your terminal to navigate to frontend directory
-- **Node:** Go to the ![Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) website and download the installer for your operating system
+- **Node:** Go to the [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) website and download the installer for your operating system
 - **Express:** npm init -y and npm install express
 - **Jest:** run npm install --save-dev jest
 
 Install Python3, Pip, PostgreSQL and Pytest in backend directory:
-- **Python3:** Go to the official ![Python](https://www.python.org/doc/) website. Click on the "Download Python 3.x.x" button.
+- **Python3:** Go to the official [Python](https://www.python.org/doc/) website. Click on the "Download Python 3.x.x" button.
 - **Pip:** If not already installed, python -m ensurepip --upgrade
-- **PostgreSQL:** Go to the official ![PostgreSQL](https://www.postgresql.org/download/windows/) website. Click on the "Download the installer" link
+- **PostgreSQL:** Go to the official [PostgreSQL](https://www.postgresql.org/download/windows/) website. Click on the "Download the installer" link
 - **Pytest:** run pip install pytest
 
 # Installation
 
-Project clone: 
 Clone the repository or download the source code: git clone https://github.com/Seyi-Toluhi/Lingo-Voyage.git
 
 Frontend and backend server start:
