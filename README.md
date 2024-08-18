@@ -6,7 +6,9 @@
 </p>
 
 # Lingo voyage - Language learning app
-<p>Welcome to Lingo Voyage, your app for learning cool new languages, built using HTML, CSS, JavaScript, Node and Express for the frontend and Python and Flask for the backend. Features user authentication handled by JSON Web Tokens. Lingo Voyage teaches Spanish and Yoruba using fun and interactive games, providing language lovers with an intuitive platform to learn. It also features the Speech Synthesis Utterance API, a part of the Web Speech API, which allows web applications to handle speech synthesis (text-to-speech). This lets users listen to the pronunciation of Spanish and Yoruba words to aid their learning.</p>
+<p>Welcome to Lingo Voyage, your app for learning cool new languages, built using HTML, CSS, JavaScript, Node and Express for the frontend and Python and Flask for the backend. Features user authentication handled by JSON Web Tokens. Lingo Voyage teaches Spanish and Yoruba using fun and interactive games, providing language lovers with an intuitive platform to learn. 
+
+It also features the Speech Synthesis Utterance API, a part of the Web Speech API, which allows web applications to handle speech synthesis (text-to-speech). This lets users listen to the pronunciation of Spanish and Yoruba words to aid their learning.</p>
 
 # Features
 - **User Account Management:** Sign up to create your account stored on PostgreSQL database.
@@ -23,7 +25,8 @@
 - **Frontend:** HTML, CSS, JavaScript, Node and Express for a dynamic and responsive user interface. 
 - **Backend:** Python, Flask for robust server-side logic and API endpoints. Database: PostgreSQL for flexible and scalable data storage.
 
-Author: Seyi Toluhi - https://github.com/Seyi-Toluhi
+# Author 
+Seyi Toluhi - https://github.com/Seyi-Toluhi
 
 # Trello
 https://trello.com/b/5xZqdOIU/lingo-voyage
@@ -38,6 +41,8 @@ To set up the Lingo voyage project locally, follow these steps:
 
 # Prerequisites
 Install Node, Express and Jest in frontend directory:
+
+
 Frontend - run cd frontend in your terminal to navigate to frontend directory
 - **Node:** Go to the [Node.js](https://nodejs.org/en/learn/getting-started/how-to-install-nodejs) website and download the installer for your operating system
 - **Express:** npm init -y and npm install express
@@ -51,16 +56,31 @@ Install Python3, Pip, PostgreSQL and Pytest in backend directory:
 
 # Installation
 
-Clone the repository or download the source code: git clone https://github.com/Seyi-Toluhi/Lingo-Voyage.git
+Clone the repository or download the source code: 
+
+
+git clone https://github.com/Seyi-Toluhi/Lingo-Voyage.git
 
 Frontend and backend server start:
+
+
 Navigate to the frontend directory: cd frontend
+
+
 run npm install - installs dependencies
+
+
 Start the frontend express server: run node server.js
+
+
 The frontend should now be running on http://localhost:3000.
 
 Navigate to the backend directory: cd backend
+
+
 Start the backend flask server: python3 app.py
+
+
 The backend should now be running on port 5000
 
 # Run Tests
@@ -69,6 +89,8 @@ The backend should now be running on port 5000
 
 # Configuration
 Environment Variables set up the required environment variables in .env files within the backend directory and .env in frontend.
+
+
 DATABASE_URL: Connection string for your Postgres database. FLASK_SECRET_KEY: secret connection key for flask server.
 
 # Usage
