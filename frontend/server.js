@@ -6,9 +6,9 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'frontend')));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 
 console.log(`Server listening on localhost:${port}`);
-app.listen(port);
+app.listen(port, '0.0.0.0');
