@@ -104,4 +104,4 @@ Explore Lingo voyage, sign up or log in, select a language to learn, and proceed
 # Contributing
 Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request with your features or fixes.
 
-Happy Learning! 📚
+Happy Voyaging! 📚
