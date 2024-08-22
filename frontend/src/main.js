@@ -180,6 +180,7 @@ function logUserIn(e){
   })
   .catch(error => {
     console.error(error); // Handle error
+    console.log(error)
     alert('Failed to get user'); // Show error message
   });
 }
