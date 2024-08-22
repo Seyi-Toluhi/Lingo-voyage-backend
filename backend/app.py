@@ -55,6 +55,7 @@ def protected(user_id):
 def create_user():
     try:
         connection = get_flask_database_connection(app)
+        connection.seed(sql_filename)
         user_repo = UserRepository(connection)
         # Getting the JSON data from the request
         data = request.get_json()
@@ -69,7 +70,11 @@ def create_user():
         user_repo.create(user)
         return jsonify({'MESSAGE': 'User created successfully'}), 201
     except Exception as e:
-        return jsonify({'ERROR': str(e)}), 500
+        print(f"Exception occurred: {e}")
+        return jsonify({
+            'ERROR': str(e)
+            }), 500
+            
     
 @app.route('/get_users', methods=['GET'])
 @token_required
@@ -128,7 +133,6 @@ def updateUserScore(user_id):
         connection = get_flask_database_connection(app)
         user_repo = UserRepository(connection)
         data = request.get_json()
-        print(data)
         user_id = data['id']
         XP = data['XP']
         print(type(user_id), user_id)
