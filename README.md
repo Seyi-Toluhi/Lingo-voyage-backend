@@ -85,9 +85,15 @@ The frontend should now be running on http://localhost:3000.
 
 Navigate to the backend directory: cd backend
 
+Install pip and python3 
+
+run pip install pipenv - installs pipenv
+
+run pipenv install - creates a new virtual environment and installs dependencies
+
+run pipenv shell - activates the virtual environment
 
 Start the backend flask server: python3 app.py
-
 
 The backend should now be running on port 5000
 
