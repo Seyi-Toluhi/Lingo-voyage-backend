@@ -21,7 +21,7 @@ It also features the Speech Synthesis Utterance API, a part of the Web Speech AP
 - **Score Tracking:** View your score via experience points earned to track your learning progress.
 - **Responsive Design:** Enjoy a seamless learning experience across all devices, thanks to my responsive design.
 
-# Project Repositories Link
+# Project Repository Links
 - **[Frontend](https://github.com/Seyi-Toluhi/Lingo-voyage-frontend)**
 - **[Backend](https://github.com/Seyi-Toluhi/Lingo-voyage-backend)**
 
